@@ -1,0 +1,6 @@
+{
+  "name": "ScoutTool",
+  "description": "ScoutTool is an online email finder, website email scraper, and lead generation tool for discovering public business contacts and organizing outreach lists.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

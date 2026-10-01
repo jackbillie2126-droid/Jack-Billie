@@ -1,0 +1,19 @@
+{
+  "campaigns": [
+    {
+      "id": "camp_na21n6raf",
+      "name": "Test Campaign",
+      "subject": "Test Subject",
+      "body": "Test Body",
+      "recipients": [
+        {
+          "email": "test@example.com",
+          "name": "Test User",
+          "status": "queued"
+        }
+      ],
+      "status": "queued",
+      "createdAt": "2026-07-16T16:37:20.287Z"
+    }
+  ]
+}

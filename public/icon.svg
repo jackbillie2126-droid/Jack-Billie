@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="scoutGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#4f46e5" />
+      <stop offset="100%" stop-color="#3730a3" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#312e81" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- App Icon Background Container with Squircle / Circle for Android & Web -->
+  <rect width="512" height="512" rx="128" fill="url(#scoutGradient)" />
+
+  <!-- Inner subtle radar ring background -->
+  <circle cx="256" cy="256" r="160" fill="none" stroke="#818cf8" stroke-width="4" stroke-opacity="0.3" stroke-dasharray="12 12" />
+  <circle cx="256" cy="256" r="110" fill="none" stroke="#a5b4fc" stroke-width="4" stroke-opacity="0.4" />
+
+  <!-- Main Scout Globe / Radar Emblem -->
+  <g filter="url(#shadow)">
+    <!-- Globe outline -->
+    <circle cx="256" cy="256" r="88" fill="#1e1b4b" fill-opacity="0.6" stroke="#ffffff" stroke-width="14" />
+    
+    <!-- Longitude / Latitude grid curves -->
+    <ellipse cx="256" cy="256" rx="42" ry="88" fill="none" stroke="#ffffff" stroke-width="10" stroke-opacity="0.9" />
+    <line x1="168" y1="256" x2="344" y2="256" stroke="#ffffff" stroke-width="10" stroke-opacity="0.9" />
+    <line x1="256" y1="168" x2="256" y2="344" stroke="#ffffff" stroke-width="10" stroke-opacity="0.9" />
+
+    <!-- Scout Discovery Target Ring -->
+    <circle cx="330" cy="330" r="48" fill="#4f46e5" stroke="#ffffff" stroke-width="12" />
+    
+    <!-- Sparkle / Pulse Icon in center of target -->
+    <path d="M 330 306 L 334 322 L 350 326 L 334 330 L 330 346 L 326 330 L 310 326 L 326 322 Z" fill="#38bdf8" />
+  </g>
+</svg>

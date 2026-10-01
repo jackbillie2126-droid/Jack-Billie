@@ -1,0 +1,47 @@
+{
+  "name": "ScoutTool — Public Email & Lead Discovery Tool",
+  "short_name": "ScoutTool",
+  "description": "ScoutTool helps you discover publicly available business emails from websites, organize leads, and build targeted outreach lists.",
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "background_color": "#0f172a",
+  "theme_color": "#4f46e5",
+  "orientation": "any",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "utilities"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Scan Website",
+      "short_name": "Scan",
+      "description": "Scan a website for public business email addresses",
+      "url": "/?action=scan",
+      "icons": [{ "src": "/icon.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Send Lists & Composer",
+      "short_name": "Outreach",
+      "description": "Create and schedule outbound email outreach",
+      "url": "/?tab=composer",
+      "icons": [{ "src": "/icon.svg", "sizes": "192x192" }]
+    }
+  ]
+}

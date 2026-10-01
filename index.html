@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#4f46e5" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="ScoutTool" />
+    <meta name="application-name" content="ScoutTool" />
+
+    <!-- App Favicon & PWA Icons -->
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/icon.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    
+    <!-- Primary Page Title & Meta Description for ScoutTool Branded Search -->
+    <title>ScoutTool — Email Finder, Email Scraper &amp; Lead Generation Tool</title>
+    <meta name="description" content="ScoutTool (also known as Scoutool or Scout Tool) is a web-based email scraper, email finder, and lead generation tool that discovers verified public business contacts from websites." />
+    <meta name="keywords" content="ScoutTool, Scoutool, Scout Tool, ScoutTool email scraper, ScoutTool email finder, ScoutTool lead generation, business email finder, website email extractor, lead discovery tool, B2B lead generation" />
+    <meta name="author" content="ScoutTool" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+    <!-- Canonical URL (dynamically synchronized to active deployment domain) -->
+    <link rel="canonical" id="scout-canonical" href="https://scouttool.vercel.app/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" id="scout-og-url" content="https://scouttool.vercel.app/" />
+    <meta property="og:title" content="ScoutTool — Email Finder, Email Scraper &amp; Lead Generation Tool" />
+    <meta property="og:description" content="ScoutTool (Scoutool / Scout Tool) is a fast, web-based email finder, website email scraper, and B2B lead generation tool for discovering public business contacts." />
+    <meta property="og:site_name" content="ScoutTool" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" id="scout-og-image" content="/icon.svg" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="ScoutTool Logo - Public Website Email Finder and Lead Generation Tool" />
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" id="scout-tw-url" content="https://scouttool.vercel.app/" />
+    <meta name="twitter:title" content="ScoutTool — Email Finder, Email Scraper &amp; Lead Generation Tool" />
+    <meta name="twitter:description" content="Discover public business contacts, extract emails from websites, and generate verified lead lists with ScoutTool (Scout Tool / Scoutool)." />
+    <meta name="twitter:image" content="/icon.svg" />
+    <meta name="twitter:image:alt" content="ScoutTool Logo - Website Email Scraper &amp; Lead Discovery" />
+
+    <!-- Dynamic SEO Canonical & Origin Resolver -->
+    <script>
+      (function() {
+        try {
+          if (typeof window !== 'undefined' && window.location && window.location.origin) {
+            var origin = window.location.origin;
+            var fullUrl = origin + (window.location.pathname || '/');
+            var can = document.getElementById('scout-canonical');
+            if (can) can.setAttribute('href', fullUrl);
+            var og = document.getElementById('scout-og-url');
+            if (og) og.setAttribute('content', fullUrl);
+            var tw = document.getElementById('scout-tw-url');
+            if (tw) tw.setAttribute('content', fullUrl);
+            var ogImg = document.getElementById('scout-og-image');
+            if (ogImg) ogImg.setAttribute('content', origin + '/icon.svg');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- JSON-LD Structured Data: Organization, WebSite, SoftwareApplication, FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://scouttool.vercel.app/#software",
+          "name": "ScoutTool",
+          "alternateName": [
+            "Scoutool",
+            "Scout Tool",
+            "ScoutTool email scraper",
+            "ScoutTool email finder",
+            "ScoutTool lead generation",
+            "Scouttoool"
+          ],
+          "applicationCategory": "BusinessApplication",
+          "applicationSubCategory": "Lead Generation Software",
+          "operatingSystem": "Web, Chrome, Firefox, Safari, Edge, Android, iOS",
+          "softwareVersion": "2.5",
+          "description": "ScoutTool is an online email finder, public email scraper, and lead generation platform designed for finding business contacts, extracting emails from websites, and organizing outreach lists.",
+          "url": "https://scouttool.vercel.app/",
+          "screenshot": "/icon.svg",
+          "author": {
+            "@type": "Organization",
+            "@id": "https://scouttool.vercel.app/#organization"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "@id": "https://scouttool.vercel.app/#organization"
+          },
+          "featureList": [
+            "Website Email Scraping",
+            "Business Email Finder",
+            "B2B Lead Generation & CSV Export",
+            "Source URL & Path Verification",
+            "SSRF Security & Rate Limiting",
+            "Personalized Outreach Sequence Composer",
+            "Anti-Spam & Deliverability Inspector",
+            "Progressive Web App (PWA) Support"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://scouttool.vercel.app/#organization",
+          "name": "ScoutTool",
+          "alternateName": ["Scoutool", "Scout Tool", "Scouttoool"],
+          "url": "https://scouttool.vercel.app/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "/icon.svg",
+            "width": 512,
+            "height": 512
+          },
+          "description": "ScoutTool provides web-based tools for public business email discovery, lead generation, and outbound outreach management."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://scouttool.vercel.app/#website",
+          "name": "ScoutTool",
+          "alternateName": ["Scoutool", "Scout Tool", "ScoutTool Lead Generation"],
+          "url": "https://scouttool.vercel.app/",
+          "description": "Official website for ScoutTool — Email Finder, Email Scraper, and Lead Generation Tool.",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://scouttool.vercel.app/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://scouttool.vercel.app/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is ScoutTool?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ScoutTool (also searched as Scoutool or Scout Tool) is an online business email finder, website email scraper, and lead generation tool designed to discover verified public business contacts from company websites."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does the ScoutTool email scraper work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The ScoutTool email scraper takes target website URLs, checks public pages such as Contact, About, Team, and Support, extracts mailto links and visible email addresses, verifies source paths, and deduplicates the results for clean data."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What makes ScoutTool an effective email finder for lead generation?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ScoutTool finds direct business contacts, eliminates duplicates, validates email formatting, links each email to its exact source URL, and allows instant export to CSV or TXT format for CRM integration."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is ScoutTool (also known as Scout Tool or Scoutool) safe and compliant?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. ScoutTool incorporates strict SSRF protection to block private IP addresses and cloud metadata services. It respects polite crawl rate limits, only indexes publicly accessible data, and includes CAN-SPAM compliant features for cold outreach."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I export scraped leads from ScoutTool?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Discovered contacts can be exported in one click to CSV or TXT, or seamlessly transferred into ScoutTool's integrated Send List and Campaign Composer for personalized outreach."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body class="bg-gray-50 dark:bg-slate-950 text-gray-900 dark:text-slate-100 antialiased selection:bg-indigo-500 selection:text-white">
+    <!-- Crawlable Pre-Rendered Fallback Content for Search Engine Bots (Googlebot, Bingbot) -->
+    <div id="root">
+      <div style="max-width: 860px; margin: 40px auto; padding: 24px; font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: #1e293b;">
+        <header style="margin-bottom: 24px; border-bottom: 2px solid #4f46e5; padding-bottom: 16px;">
+          <h1 style="font-size: 28px; font-weight: 800; color: #4f46e5; margin: 0 0 8px 0;">
+            ScoutTool — Email Finder, Email Scraper &amp; Lead Generation Tool
+          </h1>
+          <p style="font-size: 16px; color: #475569; margin: 0 0 12px 0;">
+            Welcome to <strong>ScoutTool</strong> (also recognized as <em>Scoutool</em> or <em>Scout Tool</em>). ScoutTool is a web-based public website email scraper, business email finder, and B2B lead generation tool built to discover verified business contacts directly from company domains.
+          </p>
+          <nav style="font-size: 13px; display: flex; gap: 16px; color: #4f46e5;">
+            <a href="#how-it-works" style="color: #4f46e5; text-decoration: underline;">How ScoutTool Works</a>
+            <a href="#lead-generation-features" style="color: #4f46e5; text-decoration: underline;">Key Features</a>
+            <a href="#faq-section" style="color: #4f46e5; text-decoration: underline;">Frequently Asked Questions</a>
+          </nav>
+        </header>
+        
+        <main>
+          <section id="about-scouttool" style="margin-bottom: 24px;">
+            <h2 style="font-size: 20px; font-weight: 700; color: #0f172a; margin-bottom: 8px;">What is ScoutTool?</h2>
+            <p>
+              <strong>ScoutTool</strong> is built for sales professionals, marketers, recruiters, and founders who need to discover public business email contacts quickly and safely. Simply paste target website domains, and ScoutTool will scan public contact pages to extract verified email addresses, source URLs, and company names.
+            </p>
+          </section>
+
+          <section id="how-it-works" style="margin-bottom: 24px;">
+            <h2 style="font-size: 20px; font-weight: 700; color: #0f172a; margin-bottom: 8px;">How the ScoutTool Email Scraper &amp; Finder Works</h2>
+            <ol style="padding-left: 20px; margin: 0 0 12px 0;">
+              <li style="margin-bottom: 6px;"><strong>Domain Discovery:</strong> Enter any list of company URLs or website domains into ScoutTool.</li>
+              <li style="margin-bottom: 6px;"><strong>Targeted Public Crawling:</strong> The scraper examines high-intent pages such as Contact, About, Team, and Support to discover public <code>mailto:</code> links and email patterns.</li>
+              <li style="margin-bottom: 6px;"><strong>Verification &amp; Deduplication:</strong> ScoutTool validates syntax, removes duplicate entries, and links each discovered email to its source URL.</li>
+              <li style="margin-bottom: 6px;"><strong>Export &amp; Outreach:</strong> Export leads immediately as CSV or TXT, or move them into the integrated email outreach composer.</li>
+            </ol>
+          </section>
+
+          <section id="lead-generation-features" style="margin-bottom: 24px;">
+            <h2 style="font-size: 20px; font-weight: 700; color: #0f172a; margin-bottom: 8px;">Core Capabilities of ScoutTool</h2>
+            <ul style="padding-left: 20px; margin: 0 0 12px 0;">
+              <li style="margin-bottom: 6px;"><strong>ScoutTool Email Scraper:</strong> Crawl public websites, Contact pages, About pages, and Team directories to extract publicly listed email addresses with source path attribution.</li>
+              <li style="margin-bottom: 6px;"><strong>ScoutTool Email Finder:</strong> Uncover direct business contacts, verify source URLs, and eliminate duplicate addresses automatically.</li>
+              <li style="margin-bottom: 6px;"><strong>ScoutTool Lead Generation:</strong> Organize discovered business contacts into targeted prospect lists and export them instantly to CSV or TXT for CRM systems.</li>
+              <li style="margin-bottom: 6px;"><strong>Email Outreach Composer:</strong> Connect your authorized account to compose personalized outreach sequences with anti-spam rate limiting.</li>
+              <li style="margin-bottom: 6px;"><strong>Safe &amp; SSRF-Protected:</strong> Compliant with strict security standards, respecting robots.txt and disallowing private network requests.</li>
+            </ul>
+          </section>
+
+          <section id="faq-section" style="margin-bottom: 24px;">
+            <h2 style="font-size: 20px; font-weight: 700; color: #0f172a; margin-bottom: 8px;">Frequently Asked Questions About ScoutTool</h2>
+            <div style="margin-bottom: 12px;">
+              <h3 style="font-size: 16px; font-weight: 600; color: #1e293b; margin: 0 0 4px 0;">What is ScoutTool?</h3>
+              <p style="margin: 0; font-size: 14px; color: #475569;">ScoutTool (also searched as Scoutool or Scout Tool) is an online business email finder, website email scraper, and lead generation tool designed to discover verified public business contacts from company websites.</p>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <h3 style="font-size: 16px; font-weight: 600; color: #1e293b; margin: 0 0 4px 0;">How does the ScoutTool email scraper work?</h3>
+              <p style="margin: 0; font-size: 14px; color: #475569;">The ScoutTool email scraper takes target website URLs, checks public pages such as Contact, About, Team, and Support, extracts mailto links and visible email addresses, verifies source paths, and deduplicates the results for clean data.</p>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <h3 style="font-size: 16px; font-weight: 600; color: #1e293b; margin: 0 0 4px 0;">What makes ScoutTool an effective email finder for lead generation?</h3>
+              <p style="margin: 0; font-size: 14px; color: #475569;">ScoutTool finds direct business contacts, eliminates duplicates, validates email formatting, links each email to its exact source URL, and allows instant export to CSV or TXT format for CRM integration.</p>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <h3 style="font-size: 16px; font-weight: 600; color: #1e293b; margin: 0 0 4px 0;">Is ScoutTool (also known as Scout Tool or Scoutool) safe and compliant?</h3>
+              <p style="margin: 0; font-size: 14px; color: #475569;">Yes. ScoutTool incorporates strict SSRF protection to block private IP addresses and cloud metadata services. It respects polite crawl rate limits, only indexes publicly accessible data, and includes CAN-SPAM compliant features for cold outreach.</p>
+            </div>
+          </section>
+        </main>
+
+        <footer style="margin-top: 32px; border-top: 1px solid #e2e8f0; padding-top: 16px; font-size: 13px; color: #64748b;">
+          <p>© ScoutTool — Email Finder, Email Scraper &amp; Lead Generation Platform.</p>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Fallback for JavaScript-Disabled Crawlers -->
+    <noscript>
+      <div style="max-width: 800px; margin: 20px auto; padding: 20px; background-color: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; font-family: sans-serif;">
+        <h2>JavaScript is required for the interactive ScoutTool application</h2>
+        <p>ScoutTool is an online email scraper, email finder, and lead generation tool. Please enable JavaScript in your browser to use the full interactive application.</p>
+      </div>
+    </noscript>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
