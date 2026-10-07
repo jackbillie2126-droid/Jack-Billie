@@ -252,8 +252,8 @@ async function startServer() {
           try {
             const data = await scrapeWebsite(rawUrl, {
               speedMode: isFast ? 'fast' : 'standard',
-              maxPages: isFast ? 2 : 5,
-              timeoutMs: isFast ? 1800 : 3500,
+              maxPages: isFast ? 6 : 12,
+              timeoutMs: isFast ? 6500 : 8500,
               gmailOnly
             });
             if (data.error && data.emails.length === 0) {

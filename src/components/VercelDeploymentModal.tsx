@@ -34,7 +34,7 @@ export default function VercelDeploymentModal({ isOpen, onClose }: VercelDeploym
                 Vercel Deployment &amp; Google Search Indexing Guide
               </h2>
               <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">
-                Migrate smoothly from Netlify to Vercel and get ScoutTool ranking on Google Search
+                Deploy ScoutTool on Vercel and get ranking at the top of Google Search
               </p>
             </div>
           </div>
@@ -53,11 +53,11 @@ export default function VercelDeploymentModal({ isOpen, onClose }: VercelDeploym
           <div className="p-4 rounded-xl bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/40 text-xs text-amber-900 dark:text-amber-200 space-y-2">
             <div className="font-semibold flex items-center gap-1.5 text-amber-950 dark:text-amber-100">
               <Search className="h-4 w-4 text-amber-600" />
-              <span>Why ScoutTool Wasn't Ranking on Google (And How Vercel Solves It)</span>
+              <span>Optimizing ScoutTool for Vercel &amp; Google Search</span>
             </div>
             <ul className="list-disc pl-4 space-y-1 text-neutral-700 dark:text-neutral-300 leading-relaxed">
               <li>
-                <strong>Canonical Conflicts Resolved:</strong> The app previously had hardcoded canonical tags pointing exclusively to a Netlify domain. Googlebot treated any other domain as a duplicate and dropped it from the index.
+                <strong>Dynamic Canonical Synchronization:</strong> Canonical URLs, OpenGraph tags, and Schema.org structured data automatically synchronize to your active Vercel domain or custom domain so Googlebot indexes the primary source.
               </li>
               <li>
                 <strong>Dynamic SEO Synchronized:</strong> We added dynamic canonical and Schema.org resolution so your new Vercel domain or custom domain will be recognized as the authoritative primary source.

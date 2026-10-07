@@ -422,10 +422,10 @@ export default function NewCampaign({ onCampaignCreated, userEmail, initialRecip
             <div className="flex items-center justify-between border-b border-neutral-100 dark:border-neutral-800 pb-3">
               <div>
                 <h3 className="text-sm font-semibold text-neutral-900 dark:text-white">
-                  Recipients
+                  Send List
                 </h3>
                 <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">
-                  {validList.length} {validList.length === 1 ? 'person ready' : 'people ready to receive'}
+                  {validList.length} {validList.length === 1 ? 'person ready' : 'people on this list'}
                 </p>
               </div>
 
@@ -479,13 +479,13 @@ export default function NewCampaign({ onCampaignCreated, userEmail, initialRecip
               <div className="flex items-center justify-between text-xs text-neutral-500 dark:text-neutral-400 pt-0.5">
                 <div className="flex items-center gap-2">
                   <span className="text-neutral-800 dark:text-neutral-200 font-medium">
-                    {validList.length} ready
+                    {validList.length} ready to send
                   </span>
                   {invalidList.length > 0 && (
                     <>
                       <span>·</span>
                       <span className="text-rose-600 dark:text-rose-400">
-                        {invalidList.length} needs fix
+                        {invalidList.length} invalid email{invalidList.length === 1 ? '' : 's'}
                       </span>
                     </>
                   )}
@@ -520,10 +520,10 @@ export default function NewCampaign({ onCampaignCreated, userEmail, initialRecip
                     <Mail className="h-8 w-8 mx-auto text-neutral-300 dark:text-neutral-700" />
                     <div>
                       <p className="text-xs font-semibold text-neutral-800 dark:text-neutral-200">
-                        No recipients added yet
+                        Your send list is empty
                       </p>
                       <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">
-                        Add someone manually or paste emails to get started.
+                        Add a person or paste emails to get started.
                       </p>
                     </div>
                     <button
@@ -537,25 +537,32 @@ export default function NewCampaign({ onCampaignCreated, userEmail, initialRecip
                   </div>
                 ) : (
                   <>
+                    <div className="flex items-center gap-2 text-[11px] font-semibold text-neutral-400 dark:text-neutral-500 px-1">
+                      <span className="flex-1">Email address</span>
+                      <span className="w-24">First name</span>
+                      <span className="w-28">Website / link</span>
+                      <span className="w-6"></span>
+                    </div>
+
                     {rows.map((row, idx) => (
                       <div key={idx} className="flex items-center gap-2">
                         <input
                           type="email"
-                          placeholder="Email address"
+                          placeholder="e.g. sarah@company.com"
                           value={row.email}
                           onChange={e => handleRowChange(idx, 'email', e.target.value)}
                           className="flex-1 bg-neutral-50 dark:bg-neutral-900/60 border border-neutral-200 dark:border-neutral-800 focus:border-neutral-400 text-xs px-3 py-2 rounded-lg text-neutral-900 dark:text-neutral-100 outline-hidden"
                         />
                         <input
                           type="text"
-                          placeholder="First name"
+                          placeholder="Sarah"
                           value={row.name}
                           onChange={e => handleRowChange(idx, 'name', e.target.value)}
                           className="w-24 bg-neutral-50 dark:bg-neutral-900/60 border border-neutral-200 dark:border-neutral-800 focus:border-neutral-400 text-xs px-2.5 py-2 rounded-lg text-neutral-800 dark:text-neutral-200 outline-hidden"
                         />
                         <input
                           type="text"
-                          placeholder="Website"
+                          placeholder="company.com"
                           value={row.link}
                           onChange={e => handleRowChange(idx, 'link', e.target.value)}
                           className="w-28 bg-neutral-50 dark:bg-neutral-900/60 border border-neutral-200 dark:border-neutral-800 focus:border-neutral-400 text-xs px-2.5 py-2 rounded-lg text-neutral-600 dark:text-neutral-400 outline-hidden"
@@ -564,7 +571,7 @@ export default function NewCampaign({ onCampaignCreated, userEmail, initialRecip
                           type="button"
                           onClick={() => handleRemoveRow(idx)}
                           className="p-1.5 text-neutral-400 hover:text-rose-600 cursor-pointer transition-colors"
-                          title="Remove"
+                          title="Remove person"
                         >
                           <Trash2 className="h-3.5 w-3.5" />
                         </button>
@@ -599,14 +606,14 @@ export default function NewCampaign({ onCampaignCreated, userEmail, initialRecip
             )}
           </div>
 
-          {/* Clean Sending Speed Setting */}
+          {/* Clean Delivery Timing Setting */}
           <div className="bg-white dark:bg-[#111318] border border-neutral-200 dark:border-neutral-800 rounded-xl p-5 shadow-xs space-y-3">
             <h4 className="text-xs font-semibold text-neutral-900 dark:text-white flex items-center gap-1.5">
               <Clock className="h-3.5 w-3.5 text-neutral-600" />
-              <span>Sending speed</span>
+              <span>Sending timing</span>
             </h4>
             <p className="text-xs text-neutral-500 dark:text-neutral-400">
-              Spacing out each email prevents your Gmail from looking like an automated bot.
+              Spacing out emails ensures they land safely in the inbox instead of spam.
             </p>
 
             <div className="space-y-2 pt-1">
@@ -627,10 +634,10 @@ export default function NewCampaign({ onCampaignCreated, userEmail, initialRecip
                 />
                 <div className="space-y-0.5 text-xs">
                   <div className="font-semibold text-neutral-900 dark:text-white">
-                    Natural Pace (Recommended)
+                    Natural pace (Recommended)
                   </div>
                   <div className="text-neutral-500 dark:text-neutral-400 text-[11px]">
-                    Pauses ~45 seconds between each email. Safest for staying out of spam folders.
+                    Waits ~40 seconds between each email. Best for high delivery rates.
                   </div>
                 </div>
               </label>
@@ -652,10 +659,10 @@ export default function NewCampaign({ onCampaignCreated, userEmail, initialRecip
                 />
                 <div className="space-y-0.5 text-xs">
                   <div className="font-semibold text-neutral-900 dark:text-white">
-                    Quick test mode
+                    Send right away
                   </div>
                   <div className="text-neutral-500 dark:text-neutral-400 text-[11px]">
-                    Sends immediately. Great for testing 1 or 2 test emails.
+                    Sends immediately without delays. Great for 1 or 2 test emails.
                   </div>
                 </div>
               </label>

@@ -43,7 +43,7 @@ export default function LinkExtractor({ onExportToComposer }: LinkExtractorProps
   const [inputText, setInputText] = React.useState<string>('');
   const [isScraping, setIsScraping] = React.useState(false);
   const [speedMode, setSpeedMode] = React.useState<'fast' | 'standard'>('fast');
-  const [gmailOnly, setGmailOnly] = React.useState<boolean>(true); // default to webmail/Gmail filter
+  const [gmailOnly, setGmailOnly] = React.useState<boolean>(false); // default to all verified inboxes with Gmail highlighting
   const [singleUrlInput, setSingleUrlInput] = React.useState<string>('');
 
   const [scanStepMessage, setScanStepMessage] = React.useState<string>('');
@@ -622,11 +622,13 @@ export default function LinkExtractor({ onExportToComposer }: LinkExtractorProps
               <div className="flex items-start justify-between p-3.5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40">
                 <div className="space-y-1 pr-3">
                   <div className="text-xs font-semibold text-neutral-900 dark:text-white flex items-center gap-1.5">
-                    <Mail className="h-3.5 w-3.5 text-rose-500" />
-                    <span>Only Accept Gmail &amp; Webmail Inboxes</span>
+                    <Mail className="h-3.5 w-3.5 text-blue-500" />
+                    <span>{gmailOnly ? 'Strictly Gmail & Webmail Only' : 'All Inboxes (Gmails & Business Inboxes)'}</span>
                   </div>
                   <p className="text-[11px] text-neutral-500 dark:text-neutral-400 leading-normal">
-                    Accepts <code className="font-mono text-neutral-700 dark:text-neutral-300">gmail.com</code>, <code className="font-mono text-neutral-700 dark:text-neutral-300">outlook.com</code>, <code className="font-mono text-neutral-700 dark:text-neutral-300">yahoo.com</code>, <code className="font-mono text-neutral-700 dark:text-neutral-300">hotmail.uk</code>, etc. Rejects custom corporate domains.
+                    {gmailOnly 
+                      ? 'Only accepts @gmail.com and consumer webmails (outlook, yahoo, hotmail). Rejects company domains.'
+                      : 'Extracts all real public inboxes found at depth (both personal Gmails and corporate contact inboxes). Highlights Gmails with a green badge.'}
                   </p>
                 </div>
 
@@ -938,7 +940,8 @@ export default function LinkExtractor({ onExportToComposer }: LinkExtractorProps
                           {/* Provider Badge */}
                           <td className="py-3.5 px-4 font-sans">
                             {item.provider === 'Gmail' && (
-                              <span className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-rose-50 dark:bg-rose-950/50 border border-rose-200 dark:border-rose-900/50 text-rose-700 dark:text-rose-300">
+                              <span className="inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded-md bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300">
+                                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
                                 Gmail
                               </span>
                             )}
@@ -958,13 +961,13 @@ export default function LinkExtractor({ onExportToComposer }: LinkExtractorProps
                               </span>
                             )}
                             {item.provider === 'Webmail' && (
-                              <span className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800/50 text-emerald-700 dark:text-emerald-300">
+                              <span className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800/50 text-blue-700 dark:text-blue-300">
                                 Webmail
                               </span>
                             )}
                             {item.provider === 'Custom Domain' && (
-                              <span className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400">
-                                Domain
+                              <span className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300">
+                                Company Email
                               </span>
                             )}
                             {item.provider === 'None' && (

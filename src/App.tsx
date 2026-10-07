@@ -266,15 +266,10 @@ export default function App() {
                 </div>
 
                 <div className="pt-4 border-t border-neutral-200 dark:border-neutral-800 text-xs text-neutral-400 dark:text-neutral-500 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-                  <span>Official Deployment: ScoutTool (Scout Tool / Scoutool)</span>
-                  <a
-                    href="https://scout-toool.netlify.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 dark:text-blue-400 hover:underline font-mono"
-                  >
-                    https://scout-toool.netlify.app/
-                  </a>
+                  <span>Official Application: ScoutTool</span>
+                  <span className="text-neutral-600 dark:text-neutral-400 font-mono text-[11px]">
+                    Lead Intelligence &amp; Outreach Platform
+                  </span>
                 </div>
               </div>
             )}
@@ -296,9 +291,7 @@ export default function App() {
             <span>·</span>
             <span className="font-mono">SSRF Enforced</span>
             <span>·</span>
-            <a href="https://scout-toool.netlify.app/" className="hover:underline text-neutral-500 dark:text-neutral-400">
-              scout-toool.netlify.app
-            </a>
+            <span>Verified Public Inboxes</span>
           </div>
         </div>
       </footer>

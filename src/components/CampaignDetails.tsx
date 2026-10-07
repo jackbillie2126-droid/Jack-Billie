@@ -504,17 +504,6 @@ export default function CampaignDetails({
         </div>
       )}
 
-      {isUsingClientSideOnly() && (
-        <div className="bg-indigo-50/75 border border-indigo-100 p-4 rounded-xl flex items-start gap-3">
-          <HelpCircle className="h-5 w-5 text-indigo-600 shrink-0 mt-0.5" />
-          <div className="space-y-1">
-            <span className="block text-xs font-bold text-indigo-800 uppercase tracking-wider">Client-Side Engine Active (Optimized for Netlify)</span>
-            <p className="text-xs text-indigo-700 leading-normal">
-              Because this app is deployed on Netlify, campaigns are processed directly and securely from your browser. Please keep this tab active while sending is in progress to ensure uninterrupted email delivery.
-            </p>
-          </div>
-        </div>
-      )}
 
       {errorMsg && (
         <div className="bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-900/40 p-4 rounded-xl flex items-start gap-3">
