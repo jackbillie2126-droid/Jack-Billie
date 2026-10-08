@@ -4,17 +4,26 @@ import App from './App.tsx';
 import './index.css';
 
 // Register PWA Service Worker for Web & Android installation support
-if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker
-      .register('/sw.js')
-      .then((reg) => {
-        console.log('[PWA] ServiceWorker registered with scope:', reg.scope);
-      })
-      .catch((err) => {
-        console.warn('[PWA] ServiceWorker registration failed:', err);
-      });
+if (typeof window !== 'undefined') {
+  window.addEventListener('unhandledrejection', (event) => {
+    const reason = String(event.reason?.stack || event.reason?.message || event.reason || '');
+    if (reason.includes('chrome-extension://') || reason.includes('moz-extension://')) {
+      event.preventDefault();
+    }
   });
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker
+        .register('/sw.js')
+        .then((reg) => {
+          console.log('[PWA] ServiceWorker registered with scope:', reg.scope);
+        })
+        .catch((err) => {
+          console.warn('[PWA] ServiceWorker registration failed:', err);
+        });
+    });
+  }
 }
 
 createRoot(document.getElementById('root')!).render(

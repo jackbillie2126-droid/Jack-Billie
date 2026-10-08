@@ -14,11 +14,13 @@ import { Campaign } from './types.ts';
 import { getCampaigns } from './lib/api.ts';
 import { useAppMode } from './hooks/useAppMode.ts';
 import MobileAppDock from './components/MobileAppDock.tsx';
+import EntrySplash from './components/EntrySplash.tsx';
 
 type Tab = 'scraper' | 'composer' | 'history' | 'guide';
 
 export default function App() {
   const { isAppMode, triggerHaptic } = useAppMode();
+  const [showSplash, setShowSplash] = React.useState<boolean>(true);
 
   const [user, setUser] = React.useState<User | null>(() => {
     if (typeof window !== 'undefined') {
@@ -123,6 +125,11 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-neutral-50 dark:bg-[#090A0F] text-neutral-900 dark:text-neutral-100 flex flex-col font-sans antialiased transition-colors duration-150">
+      {/* 30-Second App Entry Splash Screen with Official Logo */}
+      {showSplash && (
+        <EntrySplash onComplete={() => setShowSplash(false)} durationSeconds={30} />
+      )}
+
       {/* Universal Top Navigation Header */}
       <Header
         user={user}

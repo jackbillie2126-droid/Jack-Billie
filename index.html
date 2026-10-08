@@ -4,6 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="theme-color" content="#4f46e5" />
+
+    <!-- Browser Extension Compatibility Guard: Fixes 'Cannot set property fetch of #<Window> which has only a getter' from extensions like Urban VPN -->
+    <script>
+      (function() {
+        try {
+          if (typeof window !== 'undefined') {
+            var _nativeFetch = window.fetch ? window.fetch.bind(window) : null;
+            var _activeFetch = _nativeFetch;
+            Object.defineProperty(window, 'fetch', {
+              get: function() {
+                return _activeFetch;
+              },
+              set: function(newFetch) {
+                _activeFetch = newFetch;
+              },
+              configurable: true,
+              enumerable: true
+            });
+          }
+        } catch (err) {}
+
+        // Suppress unhandled external extension runtime errors
+        window.addEventListener('error', function(event) {
+          if (event && event.filename && (event.filename.indexOf('chrome-extension://') !== -1 || event.filename.indexOf('moz-extension://') !== -1)) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+            return true;
+          }
+        }, true);
+      })();
+    </script>
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />

@@ -1,9 +1,8 @@
 {
-  "projectId": "scout-tool-dcb40",
-  "appId": "1:1026326363799:web:12c34f948fbcfcff1433d2",
-  "apiKey": "AIzaSyBSgGbWZNNaslIukcMmfi8bFmNi32DhgPk",
-  "authDomain": "scout-tool-dcb40.firebaseapp.com",
-  "storageBucket": "scout-tool-dcb40.firebasestorage.app",
-  "messagingSenderId": "1026326363799",
-  "measurementId": "G-GQJZN1BMV0"
+  "projectId": "scouttool-live-d9f3f",
+  "appId": "1:299806912979:web:3ec78afd03e718b519ff26",
+  "apiKey": "AIzaSyCNvyM7qQbeI7x69Rold6SBHYcAKeJDWiQ",
+  "authDomain": "scouttool-live-d9f3f.firebaseapp.com",
+  "storageBucket": "scouttool-live-d9f3f.firebasestorage.app",
+  "messagingSenderId": "299806912979"
 }
